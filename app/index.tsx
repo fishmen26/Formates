@@ -1,11 +1,14 @@
 import { StatusBar, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import { Link } from 'expo-router';
+import React, { useEffect } from 'react';
+import { Link, SplashScreen } from 'expo-router';
+
+SplashScreen.preventAutoHideAsync();
 
 const index = () => {
+
   return (
-    <View style={styles.container}>
-      <Text>index</Text>
+    <View className='flex-1 items-center justify-center bg-white'>
+      <Text className='text-3xl font-'>Formates</Text>
       <StatusBar barStyle="default" />
       <Link href="/profile" style={{color:'blue'}}> Go to profile</Link>
     </View>
@@ -13,12 +16,3 @@ const index = () => {
 }
 
 export default index
-
-const styles = StyleSheet.create({
-  container:{
-    display:'flex',
-    flex:1,
-    alignItems:'center',
-    justifyContent:'center'
-  }
-})
