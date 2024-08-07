@@ -14,17 +14,57 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 const TabsLayout = () => {
   return (
     <>
-        <Tabs>
+        <Tabs
+          screenOptions={{
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: '#F97C2E',
+            tabBarStyle:{
+              height: 84,
+              borderTopWidth: 1,
+            }
+          }}
+        >
              <Tabs.Screen
-                name="home"
+                name="community"
                 options={{
-                    title: 'Home',
+                    title: 'Community',
                     headerShown: false,
                     tabBarIcon: ({ color , focused }) => (
                         <Ionicons 
-                        name="home"
-                        size={16}
+                        name="people-sharp"
+                        size={focused? 34 : 30}
                         color={color}
+                        focused={focused}
+                        />
+                    )
+                }}
+            />
+             <Tabs.Screen
+                name="connect"
+                options={{
+                    title: 'Connect',
+                    headerShown: false,
+                    tabBarIcon: ({ color , focused }) => (
+                        <Ionicons 
+                        name="infinite"
+                        size={focused? 45 : 40}
+                        color={color}
+                        focused={focused}
+                        />
+                    )
+                }}
+            />
+             <Tabs.Screen
+                name="profile"
+                options={{
+                    title: 'Profile',
+                    headerShown: false,
+                    tabBarIcon: ({ color , focused }) => (
+                        <Ionicons 
+                        name="person-circle-outline"
+                        size={focused? 41 : 36}
+                        color={color}
+                        focused={focused}
                         />
                     )
                 }}
